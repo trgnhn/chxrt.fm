@@ -24,7 +24,7 @@ function App() {
           <Route path="*" element={<h1>NOT FOUND</h1>} />
         </Routes>
         <small>
-          Data taken from <a href="https://www.last.fm/api">Last.fm API</a>.
+          Data provided by <a href="https://www.last.fm/api">Last.fm API</a>.
           Created by Trọng Nhân.
         </small>
       </div>

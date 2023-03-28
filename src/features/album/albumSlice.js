@@ -42,8 +42,10 @@ const albumSlice = createSlice({
   name: "albums",
   initialState,
   extraReducers: {
+    [getAlbums.pending]: (state, action) => {
+      state.albums = [];
+    },
     [getAlbums.fulfilled]: (state, action) => {
-      console.log(action);
       state.albums = action.payload;
     },
   },

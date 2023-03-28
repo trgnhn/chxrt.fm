@@ -109,3 +109,9 @@ small {
 .error {
   color: rgb(196, 106, 106);
 }
+
+.preload {
+  background-image: url(../assets/empty.png);
+  width: 200px;
+  height: 200px;
+}

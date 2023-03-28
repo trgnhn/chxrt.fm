@@ -21,16 +21,18 @@ export default function TopAlbums({ artistName, tagName, n = 5 }) {
       <ol className="top-albums-list">
         {albums.map((album) => (
           <li>
-            <img
-              src={
-                Object.values(album.image[2])[0].length > 1
-                  ? Object.values(album.image[2])[0]
-                  : "/src/assets/empty.png"
-              }
-              alt=""
-              width="200px"
-              height="200px"
-            />
+            <div className="preload">
+              <img
+                src={
+                  Object.values(album.image[2])[0].length > 1
+                    ? Object.values(album.image[2])[0]
+                    : "/src/assets/empty.png"
+                }
+                alt=""
+                width="200px"
+                height="200px"
+              />
+            </div>
             <span className="top-albums-title">{album.name}</span>
             {tagName && (
               <span className="top-albums-artist">

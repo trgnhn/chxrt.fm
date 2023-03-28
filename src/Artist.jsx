@@ -30,36 +30,35 @@ export default function Artist() {
     );
   }
 
-  if (!isLoaded) {
-    return <Loading />;
+  if (isLoaded) {
+    return (
+      <section className="artist-info info">
+        <div className="artist-image">
+          <AlbumCover artistName={artistName} />
+        </div>
+        <h2 className="artist-name">{artist.name}</h2>
+        <div className="tags">
+          <Tags artistName={artistName} n={10} />
+        </div>
+        <div className="albums">
+          <TopAlbums artistName={artistName} n={5} />
+        </div>
+        <div className="bio">
+          <h2>Biography</h2>
+          {artist.bio?.content ? (
+            artist.bio.content
+              .split("\n")
+              .slice(0, 10)
+              .map((s) => <p>{s}</p>)
+          ) : (
+            <>Empty</>
+          )}
+        </div>
+        <div className="song-chart">
+          <SongChart artistName={artistName} n={10} />
+        </div>
+      </section>
+    );
   }
-
-  return (
-    <section className="artist-info info">
-      <div className="artist-image">
-        <AlbumCover artistName={artistName} />
-      </div>
-      <h2 className="artist-name">{artist.name}</h2>
-      <div className="tags">
-        <Tags artistName={artistName} n={10} />
-      </div>
-      <div className="albums">
-        <TopAlbums artistName={artistName} n={5} />
-      </div>
-      <div className="bio">
-        <h2>Biography</h2>
-        {artist.bio?.content ? (
-          artist.bio.content
-            .split("\n")
-            .slice(0, 10)
-            .map((s) => <p>{s}</p>)
-        ) : (
-          <>Empty</>
-        )}
-      </div>
-      <div className="song-chart">
-        <SongChart artistName={artistName} n={10} />
-      </div>
-    </section>
-  );
+  return <Loading />;
 }

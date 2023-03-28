@@ -9,25 +9,24 @@ import { useSelector, useDispatch } from "react-redux";
 const API_KEY = "91f5405e62bf1dbb6d0497eda5a50ab0";
 
 export default function Tag() {
-  if (window.scrollY > 400) {
-    document.querySelector(".container").scrollIntoView(true);
-  }
-
   const dispatch = useDispatch();
   const { tag, isLoaded } = useSelector((store) => store.tag);
   const param = useParams();
   const tagName = param.name;
 
   useEffect(() => {
+    if (window.scrollY > 400) {
+      document.querySelector(".container").scrollIntoView(true);
+    }
     dispatch(getTag({ tagName }));
-    console.log(tag);
   }, [tagName]);
+
   if (isLoaded)
     return (
       <section className="tag-info info">
-        <h2 className="tag-name">{tag.name}</h2>
+        <h2 className="tag-name">{tagName}</h2>
         <div className="albums">
-          <TopAlbums tagName={tag.name} n={5} />
+          <TopAlbums tagName={tagName} n={5} />
         </div>
         <section className="tag-desc">
           <h2>Description</h2>
@@ -35,7 +34,7 @@ export default function Tag() {
             ? tag.wiki.content.split("\n").map((s) => <p>{s}</p>)
             : "Empty"}
         </section>
-        <SongChart tagName={tag.name} />
+        <SongChart tagName={tagName} />
       </section>
     );
   return <Loading />;
