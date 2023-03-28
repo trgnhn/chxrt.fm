@@ -1,0 +1,22 @@
+.tag-name {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-inline: auto;
+}
+.tag-desc {
+  max-width: 600px;
+
+  padding: 0.5rem 1.5rem;
+
+  margin-top: 20px;
+  margin-inline: auto;
+
+  -color: rgb(25, 25, 25);
+
+  font-size: 1.25rem;
+  p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+}

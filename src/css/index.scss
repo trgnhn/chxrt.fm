@@ -1,0 +1,111 @@
+@use "Navbar";
+@use "Hero";
+@use "Search";
+@use "Artist";
+@use "ArtistChart";
+@use "SongChart";
+@use "Tag";
+@use "mixins" as *;
+
+:root {
+  --color: blueviolet;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 300px;
+  background-image: url("../assets/bubbles.svg");
+  font-family: "Josefin Sans", sans-serif;
+  text-align: center;
+}
+
+body,
+input {
+  font-family: "Josefin Sans", sans-serif;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    font-style: italic;
+  }
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: 0.05rem;
+  font-weight: 700;
+  color: var(--color);
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+.header {
+  position: relative;
+  text-align: center;
+  padding-block: 60px 50px;
+  margin: auto;
+  font-size: 1.75rem;
+  text-transform: uppercase;
+
+  @include breakpoints-up(medium) {
+    font-size: 2.5rem;
+  }
+}
+
+small {
+  display: block;
+  padding: 50px;
+}
+
+.container {
+  max-width: 1200px;
+  min-height: 200vh;
+  padding: 20px;
+  margin-inline: auto;
+  background-color: rgb(255, 255, 255);
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.325rem 0.75rem;
+  margin: 0.25rem;
+  font-size: 0.9rem;
+  color: white;
+  background-color: var(--color);
+  border-radius: 1rem;
+  transition: all 150ms ease-in-out;
+
+  &:hover {
+    background-color: rgb(230, 230, 230);
+    color: black;
+  }
+}
+
+.see-more {
+  display: block;
+  max-width: 25%;
+  margin-top: 2rem;
+  margin-inline: auto;
+  font-size: 1.5rem;
+}
+
+.loading {
+  padding: 10px 20px;
+}
+
+.error {
+  color: rgb(196, 106, 106);
+}
