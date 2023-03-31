@@ -37,9 +37,9 @@ export default function Search() {
       </span>
       <div className="searches">
         <>
-          {artistSearches.map((artist) => {
+          {artistSearches.map((artist, index) => {
             return (
-              <Link to={`/artist/${artist.name}`}>
+              <Link key={index} to={`/artist/${artist.name}`}>
                 <li
                   className="search-result"
                   onClick={() => {

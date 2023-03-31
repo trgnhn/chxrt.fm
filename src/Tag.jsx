@@ -31,7 +31,9 @@ export default function Tag() {
         <section className="tag-desc">
           <h2>Description</h2>
           {tag.wiki.content.length > 1
-            ? tag.wiki.content.split("\n").map((s) => <p>{s}</p>)
+            ? tag.wiki.content
+                .split("\n")
+                .map((s, index) => <p key={index}>{s}</p>)
             : "Empty"}
         </section>
         <SongChart tagName={tagName} />

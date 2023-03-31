@@ -28,8 +28,14 @@ export default function Tags({ artistName, n = 5 }) {
       });
   }, [artistName]);
 
-  const listTags = tags.map((tag) => {
-    return <Link to={`/tag/${tag.name}`} className="tag">{`${tag.name}`}</Link>;
+  const listTags = tags.map((tag, index) => {
+    return (
+      <Link
+        key={index}
+        to={`/tag/${tag.name}`}
+        className="tag"
+      >{`${tag.name}`}</Link>
+    );
   });
 
   if (isLoaded) return listTags;

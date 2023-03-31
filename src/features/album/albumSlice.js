@@ -22,7 +22,7 @@ export const getAlbums = createAsyncThunk(
     if (artistName) {
       url = `https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=${artistName}&api_key=${API_KEY}&format=json`;
     }
-    console.log(url);
+
     return fetch(url, {
       method: "GET",
       headers: headers,

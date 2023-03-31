@@ -19,8 +19,8 @@ export default function TopAlbums({ artistName, tagName, n = 5 }) {
     <div className="top-albums">
       <h2>Top Albums</h2>
       <ol className="top-albums-list">
-        {albums.map((album) => (
-          <li>
+        {albums.map((album, index) => (
+          <li key={index}>
             <div className="preload">
               <img
                 src={

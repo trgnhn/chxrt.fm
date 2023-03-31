@@ -78,7 +78,6 @@ const artistSlice = createSlice({
       state.isLoaded = false;
     },
     [getArtist.fulfilled]: (state, action) => {
-      console.log(action);
       state.isLoaded = true;
       state.artist = action.payload;
     },

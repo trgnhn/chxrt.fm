@@ -36,7 +36,6 @@ const tagSlice = createSlice({
       state.tag = action.payload;
     },
     [getTag.rejected]: (state) => {
-      console.log("rejected");
       state.isLoaded = false;
     },
   },

@@ -15,7 +15,6 @@ let headers = new Headers({
 export const getSongChart = createAsyncThunk(
   "song/getSongChart",
   ({ tagName, artistName, n }) => {
-    console.log(`A${artistName}`);
     let url = "";
     if (tagName) {
       url = `https://ws.audioscrobbler.com/2.0/?method=tag.gettoptracks&tag=${tagName}&api_key=${API_KEY}&format=json`;
@@ -24,7 +23,6 @@ export const getSongChart = createAsyncThunk(
     } else {
       url = `https://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=${API_KEY}&format=json`;
     }
-    console.log(url);
 
     return fetch(url, {
       method: "GET",
@@ -52,7 +50,6 @@ const songSlice = createSlice({
       state.songChart = action.payload;
     },
     [getSongChart.rejected]: (state) => {
-      console.log("rejected");
       state.isLoaded = false;
     },
   },

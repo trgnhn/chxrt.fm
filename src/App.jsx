@@ -17,7 +17,7 @@ function App() {
       <div className="container">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/top-artists" element={<ArtistChart n={10} />} />
+          <Route path="/top-artists" element={<ArtistChart n={50} />} />
           <Route path="/top-songs" element={<SongChart n={50} />} />
           <Route path="/artist/:name" element={<Artist />} />
           <Route path="/tag/:name" element={<Tag />} />

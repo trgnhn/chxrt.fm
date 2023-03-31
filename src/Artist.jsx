@@ -43,13 +43,18 @@ export default function Artist() {
         <div className="albums">
           <TopAlbums artistName={artistName} n={5} />
         </div>
-        <div className="bio">
+        <div
+          className="bio bio--close"
+          onClick={() => {
+            document.querySelector(".bio").classList.remove("bio--close");
+          }}
+        >
           <h2>Biography</h2>
           {artist.bio?.content ? (
             artist.bio.content
               .split("\n")
               .slice(0, 10)
-              .map((s) => <p>{s}</p>)
+              .map((s, index) => <p key={index}>{s}</p>)
           ) : (
             <>Empty</>
           )}

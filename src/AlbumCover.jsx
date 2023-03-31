@@ -25,8 +25,10 @@ export default function albumCovers({ artistName, n = 1 }) {
       });
   }, [artistName]);
 
-  const albumCovers = albums.map((album) => {
-    return <img src={Object.values(album.image[2])[0]} width="300px" />;
+  const albumCovers = albums.map((album, index) => {
+    return (
+      <img key={index} src={Object.values(album.image[2])[0]} width="300px" />
+    );
   });
 
   return albumCovers;

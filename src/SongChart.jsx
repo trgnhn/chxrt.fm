@@ -24,7 +24,7 @@ export default function SongChart({ tagName, artistName, n = 10 }) {
         <table>
           <tbody>
             {songChart.map((song, index) => (
-              <tr>
+              <tr key={index}>
                 <td className="song-index">{index + 1}. </td>
                 <td className="song-artist">
                   <Link to={`/artist/${song.artist.name}`}>
